@@ -1,7 +1,7 @@
 name: discord-notif
 
 # Controls when the workflow will run
-on: [ push, pull_request ]
+on: [ push ]
 
 jobs:
   # This workflow contains a single job called "build"
