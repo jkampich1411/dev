@@ -1,14 +1,14 @@
 ---
 links:
-  - title: Netlify CMS
-    url: "https://www.netlifycms.org/"
-    desc: Open source content management for your Git workflow
-  - title: Eleventy
-    url: "https://www.11ty.dev/"
-    desc: Eleventy is a simpler static site generator.
-  - title: Alpine.js
-    url: "https://github.com/alpinejs/alpine"
-    desc: A minimal framework for composing JavaScript behavior in your markup.
-  - title: Tailwind CSS
-    url: "https://tailwindcss.com/"
-    desc: A utility-first CSS framework for rapidly building custom designs.
+  - title: theJakobcraft
+    url: "https://thejakobcraft.xyz"
+    desc: My other Website (under the Alias thejakobcraft)
+  - title: YouTube
+    url: "https://thejakobcraft.xyz/?redirect=youtube"
+    desc: My YouTube Channel
+  - title: Twitch
+    url: "https://thejakobcraft.xyz/?redirect=twitch"
+    desc: My Twitch Channel
+  - title: GitHub
+    url: "https://github.com/jkampich1411"
+    desc: My GitHub Page

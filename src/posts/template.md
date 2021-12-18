@@ -1,14 +1,10 @@
 ---
-title: This is my first post
-description: Capitalize on low hanging fruit to identify a ballpark value added
-  activity to beta test. Override the digital divide with additional
-  clickthroughs from DevOps.
-author: Surjith S M
-date: 2020-09-01
+title: Markdown Template
+description: Markdown Template for coding!
+author: Jakob Kampichler
+date: 2021-12-18
 tags:
-  - left
-  - center
-  - right
+  - markdown
 ---
 # This is a Heading h1
 
