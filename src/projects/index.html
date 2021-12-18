@@ -1,0 +1,21 @@
+---
+layout: projects
+---
+
+<center><h3>You can find all my finished projects on this page!<br/>All my unfinished projects are found on my personal GitHub page!</h3></center>
+
+<div class="w-full max-w-2xl grid grid-cols-1 lg:grid-cols-2 gap-4 my-8 px-4 lg:mx-0">
+
+    {% if quicklinks.projects %}
+
+        {% for item in quicklinks.projects %}
+            <a href="{{item.url}}" target="_blank" class="p-5 border rounded border-gray-200 hover:border-purple-400">
+                <h3>{{item.title}}
+                    →</h3>
+                <p>{{item.desc}}</p>
+            </a>
+        {% endfor %}
+
+    {% endif %}
+
+</div>
