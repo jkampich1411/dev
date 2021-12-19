@@ -2,3 +2,5 @@
 items:
   - text: Blog
     url: "/blog"
+  - text: Projects
+    url: "/projects"

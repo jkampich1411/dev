@@ -1,0 +1,16 @@
+---
+qual:
+  - skill: Coding
+    desc: I learn't how to code when I was 10 y/o and I started coding with JavaScript/NodeJS! Now I try to teach myself some other Coding-Languages like Python and C#!
+    ucdesc: Programming Languages
+    uc:
+      - JavaScript / NodeJS
+      - Java
+
+  - skill: Cloud Services
+    desc: I know how to effectively use some cloud providers!
+    ucdesc: Cloud Providers
+    uc:
+      - Oracle Cloud Infrastructure (OCI)
+      - Microsoft Azure
+      - Google Cloud Platform (GCP)

@@ -12,6 +12,13 @@ h3 {
   @apply text-2xl font-bold mb-3;
 }
 
+.collapser-content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
 /* Syntax Highlighting*/
 
 body :not(pre) > code[class*="language-"],

@@ -1,15 +1,53 @@
-<div class="w-full max-w-2xl grid grid-cols-1 lg:grid-cols-2 gap-4 my-8 px-4 lg:mx-0">
+{% include "../js/collapser.html" %}
 
-    {% if quicklinks.links %}
+<div id="qualifications" class="gap-2 my-4 px-2">
+    <center><h3>What I'm able to do:</h3></center>
+    <div class="w-full max-w-2xl grid grid-cols-1 lg:grid-cols-2 gap-2 my-4 px-2 lg:mx-0">
+        {% if qualifications.qual %}
 
-        {% for item in quicklinks.links %}
-            <a href="{{item.url}}" target="_blank" class="p-5 border rounded border-gray-200 hover:border-purple-400">
-                <h3>{{item.title}}
-                    →</h3>
-                <p>{{item.desc}}</p>
-            </a>
-        {% endfor %}
+            {% for item in qualifications.qual %}
+                <div class="p-5 border rounded border-gray-200 hover:border-blue-400">
+                    <button id="collapser" onclick="collapsible_runner(this)">
 
-    {% endif %}
+                        <h3>{{item.skill}} ↓</h3>
+                        <p>{{item.desc}}</p>
 
+                    </button>
+
+                    <div class="collapser-content gap-1 my-2 px-1 mx-0" id="collapser-content"><center>
+
+                        <hr>
+
+                        <h3>{{item.ucdesc}}</h3>
+                        <ul>
+                            {% for uc in item.uc %}
+                                <li>{{uc}}</li>
+                            {% endfor %}
+                        </ul>
+
+                    </center></div>
+
+                </div>
+            {% endfor %}
+
+        {% endif %}
+    </div>
+</div>
+
+<div id="quicklinks" class="gap-2 px-2">
+    <center><h3>Quick Links</h3></center>
+    <div class="w-full max-w-2xl grid grid-cols-1 lg:grid-cols-2 gap-2 my-4 px-2 lg:mx-0">
+
+        {% if quicklinks.links %}
+
+            {% for item in quicklinks.links %}
+                <a href="{{item.url}}" target="_blank" class="p-5 border rounded border-gray-200 hover:border-purple-400">
+                    <h3>{{item.title}} →</h3>
+                    <p>{{item.desc}}</p>
+                </a>
+            {% endfor %}
+
+        {% endif %}
+
+    </div>
 </div>

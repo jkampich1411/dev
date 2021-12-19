@@ -2,7 +2,7 @@
 links:
   - title: theJakobcraft
     url: "https://thejakobcraft.xyz"
-    desc: My other Website (under the Alias thejakobcraft)
+    desc: My other Website for my YouTube Channel! (under the Alias thejakobcraft)
   - title: YouTube
     url: "https://thejakobcraft.xyz/?redirect=youtube"
     desc: My YouTube Channel
@@ -12,3 +12,15 @@ links:
   - title: GitHub
     url: "https://github.com/jkampich1411"
     desc: My GitHub Page
+
+
+projects:
+  - title: theJakobUtils
+    url: "https://github.com/jkampich1411/jbot"
+    desc: My Discord Bot!
+  - title: MC-User-Stuff-Getter
+    url: "https://github.com/jkampich1411/mc-user-stuff-getter"
+    desc: A little API Handler to get information about a Minecraft User
+  - title: dev - WEB
+    url: "https://github.com/jkampich1411/dev"
+    desc: The website that you are currently using!
