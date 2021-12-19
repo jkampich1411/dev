@@ -7,7 +7,7 @@
 
             {% for item in qualifications.qual %}
                 <div class="p-5 border rounded border-gray-200 hover:border-blue-400">
-                    <button id="collapser">
+                    <button id="collapser" onclick="collapsible_runner(this)">
 
                         <h3>{{item.skill}} ↓</h3>
                         <p>{{item.desc}}</p>

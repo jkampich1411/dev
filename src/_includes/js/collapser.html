@@ -1,16 +1,11 @@
 <script>
-        var coll = document.getElementById('collapser');
-
-        for (var i = 0; i<coll.length; i++) {
-            coll[i].addEventListener("click", function() {
-        
-                this.classList.toggle("active");
-                var content = document.getElementById('collapser-content');
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                } else {
-                    content.style.display = "block";
-                }
-            });
+    function collapsible_runner(element) {
+        element.classList.toggle("active");
+        var content = element.nextElementSibling;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
         }
+    }
 </script>
