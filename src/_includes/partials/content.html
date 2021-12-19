@@ -14,13 +14,13 @@
 
                             <h3>{{item.ucdesc}}</h3>
 
-                            {% for uc in item.uc %}
+                            <ul>
+                                {% for uc in item.uc %}
 
-                                <ul>
-                                    
-                                </ul>
-
-                            {% endfor %}
+                                    <li>{{uc}}</li>
+                                
+                                {% endfor %}
+                            </ul>
 
                         </div>
                     </button>
