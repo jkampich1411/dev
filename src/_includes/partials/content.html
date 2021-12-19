@@ -1,5 +1,18 @@
-<script src="/static/scripts/collapser.js">
-    for(var i = 0; i<999999999999999999999; i++) doThingsCollapser(document.getElementsByClassName("collapser"), document.getElementsByClassName("collapser-content"));
+<script>
+    var coll = document.getElementById("collapser");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = document.getElementsByClassName("collapser-content");
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
 </script>
 
 <div id="qualifications" class="gap-2 my-4 px-2">
@@ -9,14 +22,14 @@
 
             {% for item in qualifications.qual %}
                 <div class="p-5 border rounded border-gray-200 hover:border-blue-400">
-                    <button type="button" class="collapser">
+                    <button type="button" class="collapser" id="collapser">
 
                         <h3>{{item.skill}} ↓</h3>
                         <p>{{item.desc}}</p>
 
                     </button>
 
-                    <div class="collapser-content">
+                    <div class="collapser-content" id="collapser-content">
 
                         <h3>{{item.ucdesc}}</h3>
 
