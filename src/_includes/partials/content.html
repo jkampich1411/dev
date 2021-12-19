@@ -1,21 +1,4 @@
-<script>
-
-    var coll = document.getElementsByClassName("collapser");
-    var i;
-
-    for (i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var content = document.getElementsByClassName("collapser-content");
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-            }
-        });
-    }
-
-</script>
+<script src="/static/scripts/collapser.js"></script>
 
 <div id="qualifications" class="gap-2 my-4 px-2">
     <center><h3>What I'm able to do:</h3></center>
