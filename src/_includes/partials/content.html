@@ -6,7 +6,7 @@
     for (i = 0; i < coll.length; i++) {
         coll[i].addEventListener("click", function() {
             this.classList.toggle("active");
-            var content = document.getElementsByClassName("collapser-content");
+            var content = this.nextElementSibling;
             if (content.style.display === "block") {
                 content.style.display = "none";
             } else {
@@ -26,23 +26,25 @@
                 <div class="p-5 border rounded border-gray-200 hover:border-blue-400">
                     <button type="button" class="collapser">
 
-                        <h3>{{item.skill}}</h3><p class="pointy-thing"> →</p>
+                        <h3>{{item.skill}} ↓</h3>
                         <p>{{item.desc}}</p>
 
-                        <div class="collapser-content">
-
-                            <h3>{{item.ucdesc}}</h3>
-
-                            <ul>
-                                {% for uc in item.uc %}
-
-                                    <li>{{uc}}</li>
-                                
-                                {% endfor %}
-                            </ul>
-
-                        </div>
                     </button>
+
+                    <div class="collapser-content">
+
+                        <h3>{{item.ucdesc}}</h3>
+
+                        <ul>
+                            {% for uc in item.uc %}
+
+                                <li>{{uc}}</li>
+                            
+                            {% endfor %}
+                        </ul>
+
+                    </div>
+
                 </div>
             {% endfor %}
 
