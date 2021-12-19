@@ -1,13 +1,11 @@
 <script>
-    function collapser_(element, element2) {
-        var coll = element;
-        var i;
+        var coll = document.getElementsByClassName('collapser');
 
-        for (i = 0; i < coll.length; i++) {
+        for (var i = 0; i<coll.length; i++) {
             coll[i].addEventListener("click", function() {
         /*
                 this.classList.toggle("active");
-                var content = document.getElementsByClassName("collapser-content");
+                var content = document.getElementsByClassName('collapser-content');
                 if (content.style.display === "block") {
                     content.style.display = "none";
                 } else {
@@ -15,5 +13,4 @@
                 } */alert(element2);
             });
         }
-    };
 </script>
