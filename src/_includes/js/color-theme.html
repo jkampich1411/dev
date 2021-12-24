@@ -4,16 +4,16 @@
     var textColorDark = "#fff";
     var textColorLight = "#000";
 
-    reloadIcons(switchToTheme);
+    reloadIcons(switchToTheme, document.getElementById("darkmode-loader"));
 
-    function pressedDarkModeButton(butn = document.getElementById("darkmode-loader")) {
+    function pressedDarkModeButton() {
       var currentTheme = document.documentElement.getAttribute("data-theme");
 
       switchToTheme = currentTheme === "dark" ? "light" : "dark";
 
       document.documentElement.setAttribute("data-theme", switchToTheme);
 
-      reloadIcons(switchToTheme, butn);
+      reloadIcons(switchToTheme, document.getElementById("darkmode-loader"));
 
     };
 
