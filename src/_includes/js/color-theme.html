@@ -6,7 +6,7 @@
 
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       document.documentElement.setAttribute("data-theme", "dark");
-      document.getElementById("darkmode-loader").innerHTML = '<i id="sun" class="far fa-sun"></i>';
+      reloadIcons("dark", document.getElementById("darkmode-loader"));
     }
     reloadIcons(switchToTheme, document.getElementById("darkmode-loader"));
 
