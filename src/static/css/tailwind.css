@@ -15,6 +15,16 @@
   --text-color: #fff;
 }
 
+#moon {
+  visibility: visible;
+  color: #000;
+}
+
+#sun {
+  visibility: hidden;
+  color: #fff;
+}
+
 h1 {
   @apply text-4xl tracking-tighter mb-3 text-center lg:text-7xl;
 }
