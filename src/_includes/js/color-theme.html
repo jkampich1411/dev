@@ -3,35 +3,36 @@
 
     var switchToTheme = "dark";
     var textColorDark = "#fff";
-    var textColorLight = "#000"
+    var textColorLight = "#000";
 
-    reloadIcons(switchToTheme, textColorDark, textColorLight);
+    reloadIcons(switchToTheme);
 
-    $("#darkmode-loader").click(function() {
+    jQuery(":button").click(function() {
+      if(this.id === "darkmode-loader") pressedButton();
+    });
+
+    function pressedButton() {
       var currentTheme = document.documentElement.getAttribute("data-theme");
 
       switchToTheme = currentTheme === "dark" ? "light" : "dark";
 
       document.documentElement.setAttribute("data-theme", switchToTheme);
 
-      reloadIcons(switchToTheme, textColorDark, textColorLight);
+      reloadIcons(switchToTheme);
+    };
 
-    });
-
-    function reloadIcons(switchToTheme, txd, txl) {
+    function reloadIcons(switchToTheme) {
 
       var sun = document.getElementById("sun");
       var moon = document.getElementById("moon");
 
       if(switchToTheme === "dark") {
         moon.style.visibility = "visible";
-        moon.style.color = txd;
         sun.style.visibility = "hidden";
       } else if(switchToTheme === "light") {
         sun.style.visibility = "visible";
-        sun.style.color = txl;
         moon.style.visibility = "hidden";
       }
-    }
+    };
 
 </script>
