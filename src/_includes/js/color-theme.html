@@ -3,7 +3,7 @@
 
     var switchToTheme = "dark";
 
-    reloadIcons();
+    reloadIcons(switchToTheme);
 
     $("#darkmode-loader").click(function() {
       var currentTheme = document.documentElement.getAttribute("data-theme");
@@ -16,7 +16,7 @@
 
     });
 
-    function reloadIcons() {
+    function reloadIcons(switchToTheme) {
       if(switchToTheme === "dark") {
         $("#moon").css("visibility", "visible");
         $("#moon").css("color", "var(--text-color)");
