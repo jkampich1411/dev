@@ -26,6 +26,13 @@
                             <a @click="isOpen = false" class="text-ml inline-block text-gray-500 no-underline hover:text-indigo-500 py-2 px-4" href="{{ item.url }}">{{ item.text }}</a>
                         </li>
                     {% endfor %}
+                    
+                    <li class="nav__item mr-3">
+                        <button class="darkmode-loader">
+                            <i id="sun" class="far fa-sun"></i>
+                            <i if="moon" class="far fa-moon"></i>
+                        </button>
+                    </li>
                 </ul>
 
             {% endif %}
