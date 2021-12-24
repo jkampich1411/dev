@@ -6,27 +6,22 @@
 
     reloadIcons(switchToTheme);
 
-    function pressedDarkModeButton() {
+    function pressedDarkModeButton(btn) {
       var currentTheme = document.documentElement.getAttribute("data-theme");
 
       switchToTheme = currentTheme === "dark" ? "light" : "dark";
 
       document.documentElement.setAttribute("data-theme", switchToTheme);
 
-      reloadIcons(switchToTheme);
+      reloadIcons(switchToTheme, btn);
+
     };
 
-    function reloadIcons(switchToTheme) {
-
-      var sun = document.getElementById("sun");
-      var moon = document.getElementById("moon");
-
+    function reloadIcons(switchToTheme, btn) {
       if(switchToTheme === "dark") {
-        moon.style.visibility = "hidden";
-        sun.style.visibility = "visible";
+        btn.innerHTML = '<i id="moon" class="far fa-moon"></i>'
       } else if(switchToTheme === "light") {
-        sun.style.visibility = "hidden";
-        moon.style.visibility = "visible";
+        btn.innerHTML = '<i id="sun" class="far fa-sun"></i>'
       }
     };
 
