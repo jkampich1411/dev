@@ -5,24 +5,24 @@
 
     var themeSwitcher = document.getElementById("darkmode-loader");
 
-    themeSwitcher.onclick = function() {
-
+    $(themeSwitcher).click(function() {
       var currentTheme = document.documentElement.getAttribute("data-theme");
 
       var switchToTheme = currentTheme === "dark" ? "light" : "dark"
 
       document.documentElement.setAttribute("data-theme", switchToTheme);
+    });
 
-      if(switchToTheme === "dark") {
+    if(switchToTheme === "dark") {
         $("#moon").css("visibility", "visible");
         $("#moon").css("color", "var(--text-color)");
         $("#sun").css("visibility", "hidden");
-      } else if(switchToTheme === "light") {
+    } else if(switchToTheme === "light") {
         $("#sun").css("visibility", "visible");
         $("#sun").css("color", "var(--text-color)");
         $("#moon").css("visibility", "hidden");
-      }
     }
+  
   });
 
 </script>
