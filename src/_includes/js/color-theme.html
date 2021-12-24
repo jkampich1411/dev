@@ -7,11 +7,7 @@
 
     reloadIcons(switchToTheme);
 
-    jQuery(":button").click(function() {
-      if(this.id === "darkmode-loader") pressedButton();
-    });
-
-    function pressedButton() {
+    function pressedDarkModeButton() {
       var currentTheme = document.documentElement.getAttribute("data-theme");
 
       switchToTheme = currentTheme === "dark" ? "light" : "dark";
