@@ -4,8 +4,10 @@
     var textColorDark = "#fff";
     var textColorLight = "#000";
 
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.setAttribute("data-theme", "dark");
-
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.setAttribute("data-theme", "dark");
+      document.getElementById("darkmode-loader").innerHTML = '<i id="sun" class="far fa-sun"></i>';
+    }
     reloadIcons(switchToTheme, document.getElementById("darkmode-loader"));
 
     function pressedDarkModeButton() {
