@@ -16,12 +16,10 @@
 }
 
 #moon {
-  visibility: visible;
   color: #000;
 }
 
 #sun {
-  visibility: hidden;
   color: #fff;
 }
 
