@@ -3,13 +3,11 @@
   document.addEventListener("DOMContentLoaded", function(e) {
     document.documentElement.setAttribute("data-theme", "light");
 
-    var themeSwitcher = document.getElementById("darkmode-loader");
-
     var switchToTheme = "dark";
 
     reloadIcons();
 
-    $(themeSwitcher).click(function() {
+    $("#darkmode-loader").click(function() {
       var currentTheme = document.documentElement.getAttribute("data-theme");
 
       switchToTheme = currentTheme === "dark" ? "light" : "dark";
