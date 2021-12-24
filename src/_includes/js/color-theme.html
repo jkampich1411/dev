@@ -2,8 +2,10 @@
     
 
     var switchToTheme = "dark";
+    var textColorDark = "#fff";
+    var textColorLight = "#000"
 
-    reloadIcons(switchToTheme);
+    reloadIcons(switchToTheme, textColorDark, textColorLight);
 
     $("#darkmode-loader").click(function() {
       var currentTheme = document.documentElement.getAttribute("data-theme");
@@ -12,19 +14,23 @@
 
       document.documentElement.setAttribute("data-theme", switchToTheme);
 
-      reloadIcons();
+      reloadIcons(switchToTheme, textColorDark, textColorLight);
 
     });
 
-    function reloadIcons(switchToTheme) {
+    function reloadIcons(switchToTheme, txd, txl) {
+
+      var sun = document.getElementById("sun");
+      var moon = document.getElementById("moon");
+
       if(switchToTheme === "dark") {
-        $("#moon").css("visibility", "visible");
-        $("#moon").css("color", "var(--text-color)");
-        $("#sun").css("visibility", "hidden");
+        moon.style.visibility = "visible";
+        moon.style.color = txd;
+        sun.style.visibility = "hidden";
       } else if(switchToTheme === "light") {
-        $("#sun").css("visibility", "visible");
-        $("#sun").css("color", "var(--text-color)");
-        $("#moon").css("visibility", "hidden");
+        sun.style.visibility = "visible";
+        sun.style.color = txl;
+        moon.style.visibility = "hidden";
       }
     }
 
