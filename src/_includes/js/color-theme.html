@@ -22,11 +22,11 @@
       var moon = document.getElementById("moon");
 
       if(switchToTheme === "dark") {
-        moon.style.visibility = "visible";
-        sun.style.visibility = "hidden";
-      } else if(switchToTheme === "light") {
-        sun.style.visibility = "visible";
         moon.style.visibility = "hidden";
+        sun.style.visibility = "visible";
+      } else if(switchToTheme === "light") {
+        sun.style.visibility = "hidden";
+        moon.style.visibility = "visible";
       }
     };
 
