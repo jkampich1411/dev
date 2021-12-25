@@ -1,0 +1,32 @@
+<script>
+
+    var switchToTheme = "light";
+    var textColorDark = "#fff";
+    var textColorLight = "#000";
+
+    function pressedDarkModeButton() {
+      var currentTheme = document.documentElement.getAttribute("data-theme");
+
+      switchToTheme = currentTheme === "dark" ? "light" : "dark";
+
+      document.documentElement.setAttribute("data-theme", switchToTheme);
+
+      reloadIcons(switchToTheme, document.getElementById("darkmode-loader"));
+
+    };
+
+    function reloadIcons(switchToTheme, btn) {
+      if(switchToTheme === "dark") {
+        btn.innerHTML = '<i id="sun" class="far fa-sun"></i>';
+      } else if(switchToTheme === "light") {
+        btn.innerHTML = '<i id="moon" class="far fa-moon"></i>';
+      }
+    };
+
+    function checkAutoDarkMode() {
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.setAttribute("data-theme", "dark");
+    };
+
+    checkAutoDarkMode();
+
+</script>

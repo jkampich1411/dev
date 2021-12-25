@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-theme="light" lang="en">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
@@ -18,15 +18,17 @@
     {% if prism == true %}
       <link rel="stylesheet" type="text/css" href="/static/css/prism-tomorrow.css">
     {% endif %}
+
   </head>
   <body>
     {% include "./partials/navbar.html" %}
-    <br/><br/><br/>
+    <br/><br style="margin: 4px 0;" />
     {{ content | safe }}
     <br/><br/><br/>
     {% include "./partials/footer.html" %}
 
     <script src="https://unpkg.com/alpinejs" defer></script>
+    <script src="https://kit.fontawesome.com/ba24822e44.js" crossorigin="anonymous"></script>
 
   </body>
 </html>

@@ -4,12 +4,36 @@
 
 /*Your Custom CSS Goes here*/
 
+:root {
+  --background-color: #fff;
+  --text-color: #000;
+  
+}
+
+[data-theme="dark"] {
+  --background-color: #242424;
+  --text-color: #fff;
+}
+
+#moon {
+  color: #000;
+}
+
+#sun {
+  color: #fff;
+}
+
 h1 {
   @apply text-4xl tracking-tighter mb-3 text-center lg:text-7xl;
 }
 
 h3 {
   @apply text-2xl font-bold mb-3;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .collapsercontent {
