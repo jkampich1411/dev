@@ -24,8 +24,7 @@
     };
 
     function checkAutoDarkMode() {
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.setAttribute("data-theme", "dark")
-      reloadIcons("dark", document.getElementById("darkmode-loader"));
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.setAttribute("data-theme", "dark");
     };
 
     checkAutoDarkMode();
