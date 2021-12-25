@@ -18,17 +18,25 @@
     {% if prism == true %}
       <link rel="stylesheet" type="text/css" href="/static/css/prism-tomorrow.css">
     {% endif %}
+    
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <script src="https://kit.fontawesome.com/ba24822e44.js" crossorigin="anonymous"></script>
 
   </head>
   <body>
-    {% include "./partials/navbar.html" %}
-    <br/><br style="margin: 4px 0;" />
-    {{ content | safe }}
-    <br/><br/><br/>
-    {% include "./partials/footer.html" %}
+    
+    <div class="navbar">
+      {% include "./important/navbar.html" %}
+    </div>
 
-    <script src="https://unpkg.com/alpinejs" defer></script>
-    <script src="https://kit.fontawesome.com/ba24822e44.js" crossorigin="anonymous"></script>
+    <div class="content">
+      {{ content | safe }}
+    </div>
+
+    <div class="footer">
+      <br/><br/>
+      {% include "./important/footer.html" %}
+    </div>
 
   </body>
 </html>

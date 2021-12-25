@@ -36,11 +36,11 @@ body {
   color: var(--text-color);
 }
 
-.collapsercontent {
+#collapsercontent {
   padding: 0 18px;
-  display: none;
+  max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease-out;
+  transition: max-height 0.3s ease-out;
 }
 
 /* Syntax Highlighting*/
