@@ -19,6 +19,7 @@ module.exports = function (eleventyConfig) {
 
   // Syntax Highlighting for Code blocks
   eleventyConfig.addPlugin(syntaxHighlight);
+  //eleventyConfig.addPlugin(require("@ampproject/eleventy-plugin-amp"));
 
   // To Support .yaml Extension in _data
   // You may remove this if you can use JSON

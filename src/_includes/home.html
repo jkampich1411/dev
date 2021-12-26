@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="shortcut icon" href="../favicon-32x32.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <title>
+      {{title}}
+    </title>
+    {% if description %}
+      <meta name="description" content="{{description}}"/>
+    {% endif %}
+    {% block head %}{% endblock %}
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+    {% if prism == true %}
+      <link rel="stylesheet" type="text/css" href="/static/css/prism-tomorrow.css">
+    {% endif %}
+    
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <script src="https://kit.fontawesome.com/ba24822e44.js" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    
+    <div id="navbar">
+      {% include "./important/navbar.html" %}
+    </div>
+
+    <div id="main">
+      <br/><br/><br/>
+      <main tabindex="-1" id="content">{{ content | safe }}</main>
+    </div>
+
+    <div id="footer">
+      <br/><br/>
+      {% include "./important/footer.html" %}
+    </div>
+
+  </body>
+</html>
