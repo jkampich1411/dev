@@ -35,8 +35,6 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   position: relative;
-  width: 1900px;
-  height: 100px;
   overflow-y: scroll;
   box-sizing: border-box;
 }
