@@ -1,0 +1,66 @@
+<script>
+
+  function getFullscreen(elem) {
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) { /* Firefox */
+      elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE/Edge */
+      elem.msRequestFullscreen();
+    }
+  }
+
+    function TypeWrite(element, txt, speed, ch) {
+        var i = 0;
+        var sped = speed || 50;
+        var WhatShouldIdo = ch || "TYPE";
+        
+        if(WhatShouldIdo == "TYPE") {
+            
+            var interval1 = setInterval(function() {
+                if (i < txt.length) {
+                    element.innerHTML += txt.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(interval1);
+                }
+            }, speed);
+        
+        } else if(WhatShouldIdo == "DELETE") {
+            
+            var interval2 = setInterval(function() {
+                if (i < element.innerHTML.length) {
+                    element.innerHTML = element.innerHTML.substring(0, element.innerHTML.length - 1);
+                } else {
+                    clearInterval(interval2);
+                }
+            }, speed);
+
+        }
+    };
+
+    var TypeWrittenText_Qualifications = [
+            "I'm a (almost) full-stack developer who really likes to make backends.",
+            "I love playing video games.",
+            "I'm a fast learner.",
+            "I really like to learn new things.",
+            "I really like playing Minecraft.",
+            "I can code in JavaScript, Java, a little bit of Python and in Minecraft commands.",
+            "My favorite programming language is JavaScript.",
+            "This website was coded in my free time.",
+            "I live in Austria.",
+            "I'm a big fan of the game Minecraft.",
+            "Most of my programming knowledge is in JavaScript.",
+            "Most of these texts are written by GitHub Copilot. (But I kinda agree with them!)",
+            "I still go to school.",
+            "I am coding since I was a kid.",
+            "Linux is my favorite operating system.",
+            "I'd really like to own a MacBook.",
+            "Fun fact: 1 + 1 = 2.",
+            "In my local time it is currently 11:28 pm.",
+            "I am introverted.",
+        ];
+
+</script>

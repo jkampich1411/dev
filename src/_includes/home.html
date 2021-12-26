@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="shortcut icon" href="favicon-32x32.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="shortcut icon" href="../favicon-32x32.png">
+    <link rel="manifest" href="../site.webmanifest">
     <title>
       {{title}}
     </title>
@@ -25,15 +25,16 @@
   </head>
   <body>
     
-    <div class="navbar">
+    <div id="navbar">
       {% include "./important/navbar.html" %}
     </div>
 
-    <div class="content">
-      {{ content | safe }}
+    <div id="main">
+      <br/><br/><br/>
+      <main tabindex="-1" id="content">{{ content | safe }}</main>
     </div>
 
-    <div class="footer">
+    <div id="footer">
       <br/><br/>
       {% include "./important/footer.html" %}
     </div>

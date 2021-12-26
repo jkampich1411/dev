@@ -34,6 +34,11 @@ h3 {
 body {
   background-color: var(--background-color);
   color: var(--text-color);
+  position: relative;
+  width: 1900px;
+  height: 100px;
+  overflow-y: scroll;
+  box-sizing: border-box;
 }
 
 #collapsercontent {
@@ -41,6 +46,23 @@ body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out;
+}
+
+#darkmode-loader {
+  transition: visibility 0.3s ease-out;
+}
+
+.typewritten_text {
+  color: darkturquoise;
+  font-size: 2.5em;
+  font-weight: bold;
+  padding: 15px 1px;
+}
+
+#main {
+  box-sizing: border-box;
+  margin: -1px 0 0 0;
+  padding: 10px;
 }
 
 /* Syntax Highlighting*/
