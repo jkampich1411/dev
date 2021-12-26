@@ -14,3 +14,11 @@ qual:
       - Oracle Cloud Infrastructure (OCI)
       - Microsoft Azure
       - Google Cloud Platform (GCP)
+
+  - skill: Minecraft
+    desc: I know how to create Minecraft Servers, manage them and play on them!
+    ucdesc: Minecraft Servers that I helped create
+    uc:
+      - bossascrew.de
+      - futureblocks.de
+      - (soon to come) FutureEvents
