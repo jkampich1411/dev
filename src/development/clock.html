@@ -1,0 +1,488 @@
+<html>
+
+<head>
+    <title>Clock</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+         :root {
+            --bg-color: #292929;
+            --vg-color: #e4d5d5;
+            --font: Nunito;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+        }
+        
+        .hour_marker {
+            fill: transparent;
+            stroke: #5c5c5c;
+            stroke-width: 7;
+            stroke-dasharray: 0.2, 4.8;
+            stroke-dashoffset: 0.1;
+        }
+        
+        .minute_marker {
+            fill: transparent;
+            stroke: #fff;
+            stroke-width: 7;
+            stroke-dasharray: 0.2, 0.8;
+            stroke-dashoffset: 0.1;
+        }
+        
+        .hand {
+            stroke: #e4d5d5;
+            stroke-width: 2;
+            stroke-linecap: round;
+        }
+        
+        .hand--thick {
+            stroke-width: 7;
+        }
+        
+        .hand--second {
+            stroke: yellow;
+        }
+        
+        .center {
+            fill: var(--bg-color);
+            stroke: white;
+            stroke-width: 2;
+        }
+        
+        .indicator {
+            color: var(--vg-color);
+            font-family: var(--font);
+            font-size: 1.5em;
+        }
+    </style>
+
+    <script>
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        function updateClock() {
+
+            var langParm = getParameterByName("lang") || "en";
+            var typeParam = getParameterByName("type");
+            var clockParam = getParameterByName("clock");
+
+            var date = new Date();
+
+            var hour = date.getHours() + date.getMinutes() / 60;
+            var minute = date.getMinutes() + date.getSeconds() / 60;
+            var second = date.getSeconds() + date.getMilliseconds() / 1000;
+
+            var defHour;
+            var defMinute;
+            var defSecond;
+
+            if (date.getHours() < 10) {
+                defHour = `0${date.getHours()}`;
+            } else {
+                defHour = date.getHours();
+            };
+
+            if (date.getMinutes() < 10) {
+                defMinute = `0${date.getMinutes()}`;
+            } else {
+                defMinute = date.getMinutes();
+            };
+
+            if (date.getSeconds() < 10) {
+                defSecond = `0${date.getSeconds()}`;
+            } else {
+                defSecond = date.getSeconds();
+            };
+
+            var dayPl;
+            if (langParm == "en") {
+                switch (date.getDay()) {
+                    case 0:
+                        dayPl = "Monday"
+                        break;
+
+                    case 1:
+                        dayPl = "Tuesday"
+                        break;
+
+                    case 2:
+                        dayPl = "Wednesday"
+                        break;
+
+                    case 3:
+                        dayPl = "Thursday"
+                        break;
+
+                    case 4:
+                        dayPl = "Friday"
+                        break;
+
+                    case 5:
+                        dayPl = "Saturday"
+                        break;
+
+                    case 6:
+                        dayPl = "Sunday"
+                        break;
+
+                    default:
+                        dayPl = "there is a big error in the code. PLS FIX"
+                        break;
+                }
+            } else if (langParm == "de") {
+                switch (date.getDay()) {
+                    case 0:
+                        dayPl = "Montag"
+                        break;
+
+                    case 1:
+                        dayPl = "Dienstag"
+                        break;
+
+                    case 2:
+                        dayPl = "Mittwoch"
+                        break;
+
+                    case 3:
+                        dayPl = "Donnerstag"
+                        break;
+
+                    case 4:
+                        dayPl = "Freitag"
+                        break;
+
+                    case 5:
+                        dayPl = "Samstag"
+                        break;
+
+                    case 6:
+                        dayPl = "Sonntag"
+                        break;
+
+                    default:
+                        dayPl = "there is a big error in the code. PLS FIX"
+                        break;
+                }
+            } else {
+                switch (date.getDay()) {
+                    case 0:
+                        dayPl = "Monday"
+                        break;
+
+                    case 1:
+                        dayPl = "Tuesday"
+                        break;
+
+                    case 2:
+                        dayPl = "Wednesday"
+                        break;
+
+                    case 3:
+                        dayPl = "Thursday"
+                        break;
+
+                    case 4:
+                        dayPl = "Friday"
+                        break;
+
+                    case 5:
+                        dayPl = "Saturday"
+                        break;
+
+                    case 6:
+                        dayPl = "Sunday"
+                        break;
+
+                    default:
+                        dayPl = "there is a big error in the code. PLS FIX"
+                        break;
+                }
+            }
+
+            var monthPl;
+            if (langParm == "en") {
+                switch (date.getMonth()) {
+                    case 0:
+                        monthPl = "January"
+                        break;
+
+                    case 1:
+                        monthPl = "February"
+                        break;
+
+                    case 2:
+                        monthPl = "March"
+                        break;
+
+                    case 3:
+                        monthPl = "April"
+                        break;
+
+                    case 4:
+                        monthPl = "May"
+                        break;
+
+                    case 5:
+                        monthPl = "June"
+                        break;
+
+                    case 6:
+                        monthPl = "July"
+                        break;
+
+                    case 7:
+                        monthPl = "August"
+                        break;
+
+                    case 8:
+                        monthPl = "September"
+                        break;
+
+                    case 9:
+                        monthPl = "October"
+                        break;
+
+                    case 10:
+                        monthPl = "November"
+                        break;
+
+                    case 11:
+                        monthPl = "December"
+                        break;
+
+                    default:
+                        monthPl = "there is a big error in the code. PLS FIX"
+                        break;
+                }
+            } else if (langParm == "de") {
+                switch (date.getMonth()) {
+                    case 0:
+                        monthPl = "Januar"
+                        break;
+
+                    case 1:
+                        monthPl = "Februar"
+                        break;
+
+                    case 2:
+                        monthPl = "März"
+                        break;
+
+                    case 3:
+                        monthPl = "April"
+                        break;
+
+                    case 4:
+                        monthPl = "Mai"
+                        break;
+
+                    case 5:
+                        monthPl = "Juni"
+                        break;
+
+                    case 6:
+                        monthPl = "Juli"
+                        break;
+
+                    case 7:
+                        monthPl = "August"
+                        break;
+
+                    case 8:
+                        monthPl = "September"
+                        break;
+
+                    case 9:
+                        monthPl = "Oktober"
+                        break;
+
+                    case 10:
+                        monthPl = "November"
+                        break;
+
+                    case 11:
+                        monthPl = "Dezember"
+                        break;
+
+                    default:
+                        monthPl = "there is a big error in the code. PLS FIX"
+                        break;
+                }
+            } else {
+                switch (date.getMonth()) {
+                    case 0:
+                        monthPl = "January"
+                        break;
+
+                    case 1:
+                        monthPl = "February"
+                        break;
+
+                    case 2:
+                        monthPl = "March"
+                        break;
+
+                    case 3:
+                        monthPl = "April"
+                        break;
+
+                    case 4:
+                        monthPl = "May"
+                        break;
+
+                    case 5:
+                        monthPl = "June"
+                        break;
+
+                    case 6:
+                        monthPl = "July"
+                        break;
+
+                    case 7:
+                        monthPl = "August"
+                        break;
+
+                    case 8:
+                        monthPl = "September"
+                        break;
+
+                    case 9:
+                        monthPl = "October"
+                        break;
+
+                    case 10:
+                        monthPl = "November"
+                        break;
+
+                    case 11:
+                        monthPl = "December"
+                        break;
+
+                    default:
+                        monthPl = "there is a big error in the code. PLS FIX"
+                        break;
+                }
+            }
+
+            var cDayPl;
+            if (langParm === "en") {
+                if (date.getDate() == 1 || date.getDate() == 11 || date.getDate() == 21 || date.getDate() == 31) {
+                    cDayPl = `${date.getDate()}st`
+                } else if (date.getDate() == 2 || date.getDate() == 12 || date.getDate() == 22) {
+                    cDayPl = `${date.getDate()}nd`
+                } else if (date.getDate() == 3 || date.getDate() == 13 || date.getDate() == 23) {
+                    cDayPl = `${date.getDate()}rd`
+                } else {
+                    cDayPl = `${date.getDate()}th`
+                };
+            } else if (langParm === "de") {
+                cDayPl = `${date.getDate()}te`;
+            } else {
+                if (date.getDate() == 1 || date.getDate() == 11 || date.getDate() == 21 || date.getDate() == 31) {
+                    cDayPl = `${date.getDate()}st`
+                } else if (date.getDate() == 2 || date.getDate() == 12 || date.getDate() == 22) {
+                    cDayPl = `${date.getDate()}nd`
+                } else if (date.getDate() == 3 || date.getDate() == 13 || date.getDate() == 23) {
+                    cDayPl = `${date.getDate()}rd`
+                } else {
+                    cDayPl = `${date.getDate()}th`
+                };
+            }
+
+            var lang;
+            if (langParm === "en") lang = "o'clock";
+            else if (langParm === "de") lang = "Uhr";
+            else lang = "o'clock";
+
+            var timeString = `${defHour}:${defMinute}:${defSecond} ${lang}`;
+
+            var dateString;
+            if (langParm === "en") {
+                dateString = `${dayPl}, ${cDayPl} of the ${monthPl}, ${date.getFullYear()}`;
+            } else if (langParm === "de") {
+                dateString = `${dayPl}, der ${cDayPl} ${monthPl} ${date.getFullYear()}`;
+            } else {
+                dateString = `${dayPl}, ${cDayPl} of the ${monthPl}, ${date.getFullYear()}`;
+            }
+
+            if (typeParam === "short") {
+                if (langParm === "en") {
+                    dateString = `${cDayPl} ${monthPl} ${date.getFullYear()}`;
+                } else if (langParm === "de") {
+                    cDayPl = `${date.getDate()}ter`;
+                    dateString = `${cDayPl} ${monthPl} ${date.getFullYear()}`;
+                } else {
+                    dateString = `${cDayPl} ${monthPl} ${date.getFullYear()}`;
+                }
+            }
+
+            if (clockParam === "analog") {
+                dateString = ``;
+                timeString = ``;
+            }
+
+            if (clockParam === "digital") {
+                document.getElementById("clockSvg").style.display = "none";
+            }
+
+            var outputString = `${dateString}\n${timeString}`;
+
+            document.getElementById("hour_hand").setAttribute("transform", `rotate(${(360 / 12) * hour})`);
+            document.getElementById("minute_hand").setAttribute("transform", `rotate(${(360 / 60) * minute})`);
+            document.getElementById("second_hand").setAttribute("transform", `rotate(${(360 / 60) * second})`);
+            document.getElementById("indicator").innerText = outputString;
+
+            requestAnimationFrame(updateClock);
+        }
+
+        requestAnimationFrame(updateClock);
+    </script>
+
+</head>
+
+<body>
+
+    <center>
+        <div>
+
+            <svg id="clockSvg" width="200" height="200" viewBox="-100 -100 200 200">
+      
+                <circle cx="0" cy="0" r="90" pathLength="60" class="minute_marker" />
+                <circle cx="0" cy="0" r="90" pathLength="60" class="hour_marker" />
+
+                <text id="misc" class="text" x="45" y="5"></text>
+
+                <g id="hour_hand">
+                    <line class="hand" x1="0" y1="0" x2="0" y2="-50" />
+                    <line class="hand hand--thick" x1="0" y1="-12" x2="0" y2="-50" />
+                </g>
+
+                <g id="minute_hand">
+                    <line class="hand" x1="0" y1="0" x2="0" y2="-80" />
+                    <line class="hand hand--thick" x1="0" y1="-12" x2="0" y2="-80" />
+                </g>
+
+                <g id="second_hand">
+                    <line class="hand hand--second" x1="0" y1="12" x2="0" y2="-80" />
+                </g>
+
+                <circle class="center" r="3" />
+
+            </svg>
+
+            <h3 id="indicator" class="indicator"></h3>
+
+        </div>
+    </center>
+
+</body>
+
+</html>
