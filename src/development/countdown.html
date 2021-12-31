@@ -7,16 +7,16 @@
         <script>
 
 
-            var day = int(new Parameter().get("day")) || 31;
-            var pMth = int(new Parameter().get("mth")) || 12;
-            var year = int(new Parameter().get("year")) || 2021;
+            var day = new Parameter().get("day") || 31;
+            var pMth = new Parameter().get("mth") || 12;
+            var year = new Parameter().get("year") || 2021;
 
             var mth = pMth -1;
 
             var expiredString = String(new Parameter().get("expired")) || "Frohes Neujahr!";
 
             // Set the date we're counting down to
-var countDownDate = new Date(year, mth, day).getTime();
+var countDownDate = new Date(parseInt(year), parseInt(mth), parseInt(day)).getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
