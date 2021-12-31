@@ -13,7 +13,9 @@
 
             var mth = pMth -1;
 
-            var expiredString = String(new Parameter().get("expired")) || "Frohes Neujahr!";
+            var expiredParameter = new Parameter().get("expired")
+
+            var expiredString = expiredParameter.toString() || "Frohes Neujahr!";
 
             // Set the date we're counting down to
 var countDownDate = new Date(parseInt(year), parseInt(mth), parseInt(day)).getTime();
