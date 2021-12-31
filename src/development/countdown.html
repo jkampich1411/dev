@@ -2,12 +2,58 @@
     <head>
         <title>Countdown</title>
 
-        <script src="https://cdn.jsdelivr.net/gh/jkampich1411/cdnjs/classes/GetUrlParameter.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/jkampich1411/cdnjs@latest/classes/GetUrlParameter.js"></script>
 
         <script>
-            const TestParameter = new Parameter("test", window.location.href);
-            console.log(TestParameter.get());
+
+
+            var day = int(new Parameter().get("day")) || 31;
+            var pMth = int(new Parameter().get("mth")) || 12;
+            var year = int(new Parameter().get("year")) || 2021;
+
+            var mth = pMth -1;
+
+            var expiredString = String(new Parameter().get("expired")) || "Frohes Neujahr!";
+
+            // Set the date we're counting down to
+var countDownDate = new Date(year, mth, day).getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("abc").innerHTML = hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+    if(distance < 0) {
+        document.getElementById("abc").innerHTML = expiredString;
+        clearInterval(x);
+    }
+
+}, 1000);
         </script>
 
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+
+            .abc {
+                font-family: 'Nunito', sans-serif;
+            }
+        </style>
+
     </head>
+
+
+    <body><p id="abc" class="abc"></p></body>
 </html>
