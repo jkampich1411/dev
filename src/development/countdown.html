@@ -39,8 +39,8 @@ var x = setInterval(function() {
   + minutes + "m " + seconds + "s ";
 
     if(distance < 0) {
-        document.getElementById("abc").innerHTML = expiredString;
         clearInterval(x);
+        document.getElementById("abc").innerHTML = expiredString;
     }
 
 }, 1000);
