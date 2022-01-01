@@ -7,9 +7,9 @@
         <script>
 
 
-            var day = new Parameter().get("day") || 31;
-            var pMth = new Parameter().get("mth") || 12;
-            var year = new Parameter().get("year") || 2021;
+            var day = new Parameter("day").get || 31;
+            var pMth = new Parameter("mth").get || 12;
+            var year = new Parameter("year").get || 2021;
 
             var mth = pMth -1;
 
