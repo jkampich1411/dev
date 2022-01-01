@@ -13,7 +13,7 @@
 
             var mth = pMth -1;
 
-            var expiredParameter = new Parameter().get("expired")
+            var expiredParameter = new Parameter("expired").get;
 
             var expiredString = expiredParameter.toString() || "Frohes Neujahr!";
 
