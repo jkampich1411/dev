@@ -6,6 +6,7 @@ qual:
     uc:
       - JavaScript / NodeJS
       - Java
+      - Python
 
   - skill: Cloud Services
     desc: I know how to effectively use some cloud providers!
