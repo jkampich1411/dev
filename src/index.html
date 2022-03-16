@@ -77,24 +77,24 @@ path: home
             <h3>{{item.skill}} ↓</h3>
             <p>{{item.desc}}</p>
           </center>
+
+          <div class="collapsercontent gap-1 my-2 px-1 mx-0" id="collapsercontent">
+            <center>
+              <div class="my-1" id="spacer">⠀</div>
+              <hr>
+              <div class="my-1" id="spacer">⠀</div>
+  
+              <h3>{{item.ucdesc}}</h3>
+              <ul>
+                {% for uc in item.uc %}
+                <li>{{uc}}</li>
+                {% endfor %}
+              </ul>
+            </center>
+  
+          </div>
+
         </button>
-
-
-        <div class="collapsercontent gap-1 my-2 px-1 mx-0" id="collapsercontent">
-          <center>
-            <div class="my-1" id="spacer">⠀</div>
-            <hr>
-            <div class="my-1" id="spacer">⠀</div>
-
-            <h3>{{item.ucdesc}}</h3>
-            <ul>
-              {% for uc in item.uc %}
-              <li>{{uc}}</li>
-              {% endfor %}
-            </ul>
-          </center>
-
-        </div>
 
       </div>
       {% endfor %}
