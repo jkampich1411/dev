@@ -25,6 +25,7 @@
 
     function checkAutoDarkMode() {
       if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.setAttribute("data-theme", "dark");
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) reloadIcons("dark", document.getElementById("darkmode-loader"));
     };
 
     checkAutoDarkMode();
@@ -34,5 +35,10 @@
         pressedDarkModeButton();
       }
     });
+
+    function updateDarkmodeCookies() {
+      let c = document.cookie.split('darkm')[1].split("=")[1];
+      console.log(c)
+    }
 
 </script>
