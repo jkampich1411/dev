@@ -7,6 +7,7 @@ qual:
       - JavaScript / NodeJS
       - Java
       - Python
+    short: Coding
 
   - skill: Cloud Services
     desc: I know how to effectively use some cloud providers!
@@ -15,7 +16,8 @@ qual:
       - Oracle Cloud Infrastructure (OCI)
       - Microsoft Azure
       - Google Cloud Platform (GCP)
-
+    short: Cloud_Services
+    
   - skill: Minecraft
     desc: I know how to create Minecraft Servers, manage them and play on them!
     ucdesc: Minecraft Servers that I helped create
@@ -23,3 +25,4 @@ qual:
       - bossascrew.de
       - futureblocks.de
       - (soon to come) FutureEvents
+    short: Minecraft

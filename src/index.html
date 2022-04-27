@@ -1,148 +1,132 @@
----
-layout: home
-title: jkdev
-description: This is the main Website of Jakob Kampichler!
-path: home
----
+--- layout: home title: jkdev description: This is the main Website of Jakob Kampichler! path: home ---
 
 <div class="container mx-auto flex flex-col justify-center items-center">
 
-  <h1>
-    Welcome to
-    <strong class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+    <h1>
+        Welcome to
+        <strong class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
       {{title}}⠀
     </strong>
-  </h1>
+    </h1>
 
-  <center>
-    <p>
-      This is the main Website of Jakob Kampichler (aka. jkdev).<br />Here you can find all my development projects that
-      I'll ever make!
-    </p>
-  </center>
-
-  <div class="my-1" id="spacer">⠀</div>
-
-  <center>
-    <div class="my-1" id="spacer">⠀</div>
-  </center>
-
-  <!-- #region Here are some things to know about me. -->
-  <div id="fun_facts_about_me">
     <center>
-      <h3>Here are some things that you should know about me!</h3>
+        <p>
+            This is the main Website of Jakob Kampichler (aka. jkdev).<br />Here you can find all my development projects that I'll ever make!
+        </p>
     </center>
-    <div id="a_little_bit_to_know_about_me" class="gap-2 my-2 px-1">
-      <center>
-        <h3 id="typewriter-qualifications" class="typewritten_text"></h3>
-      </center>
 
-      <script>
+    <div class="my-1" id="spacer">⠀</div>
 
-        setTimeout(() => TypeWrite(document.getElementById("typewriter-qualifications"), `„${TypeWrittenText_Qualifications[Math.floor(Math.random() * TypeWrittenText_Qualifications.length)]}“`, 50, "TYPE"), 1000);
-        setTimeout(() => TypeWrite(document.getElementById("typewriter-qualifications"), "THIS IS IRRELEVANT!!!", 50, "DELETE"), 10000);
+    <center>
+        <div class="my-1" id="spacer">⠀</div>
+    </center>
 
-        setTimeout(() => {
-          var qualInt = setInterval(() => {
-            TypeWrite(document.getElementById("typewriter-qualifications"), `„${TypeWrittenText_Qualifications[Math.floor(Math.random() * TypeWrittenText_Qualifications.length)]}“`, 50, "TYPE");
-            setTimeout(() => {
-              TypeWrite(document.getElementById("typewriter-qualifications"), "this is very unimportant. ipsjzhashguadhguhg", 50, "DELETE");
-            }, 9000);
-          }, 14000)
-        }, 1000);
+    <!-- #region Here are some things to know about me. -->
+    <div id="fun_facts_about_me">
+        <center>
+            <h3>Here are some things that you should know about me!</h3>
+        </center>
+        <div id="a_little_bit_to_know_about_me" class="gap-2 my-2 px-1">
+            <center>
+                <h3 id="typewriter-qualifications" class="typewritten_text"></h3>
+            </center>
 
-      </script>
+            <script>
+                setTimeout(() => TypeWrite(document.getElementById("typewriter-qualifications"), `„${TypeWrittenText_Qualifications[Math.floor(Math.random() * TypeWrittenText_Qualifications.length)]}“`, 50, "TYPE"), 1000);
+                setTimeout(() => TypeWrite(document.getElementById("typewriter-qualifications"), "THIS IS IRRELEVANT!!!", 50, "DELETE"), 10000);
 
+                setTimeout(() => {
+                    var qualInt = setInterval(() => {
+                        TypeWrite(document.getElementById("typewriter-qualifications"), `„${TypeWrittenText_Qualifications[Math.floor(Math.random() * TypeWrittenText_Qualifications.length)]}“`, 50, "TYPE");
+                        setTimeout(() => {
+                            TypeWrite(document.getElementById("typewriter-qualifications"), "this is very unimportant. ipsjzhashguadhguhg", 50, "DELETE");
+                        }, 9000);
+                    }, 14000)
+                }, 1000);
+            </script>
+
+        </div>
+        <!-- #endregion END -->
     </div>
-    <!-- #endregion END -->
-  </div>
 
-  <center>
-    <div class="my-1" id="spacer">⠀</div>
-  </center>
-
-  <!-- #region Qualifications -->
-  <div id="qualifications" class="gap-2 my-4 px-2">
     <center>
-      <h3>What I'm able to do:</h3>
+        <div class="my-1" id="spacer">⠀</div>
     </center>
 
-    <div class="w-full max-w-2xl grid grid-cols-1 lg:grid-cols-2 gap-2 my-4 px-2 lg:mx-0">
-      {% if qualifications.qual %}
+    <!-- #region Qualifications -->
+    <div id="qualifications" class="gap-2 my-4 px-2">
+        <center>
+            <h3>What I'm able to do:</h3>
+        </center>
 
-      {% for item in qualifications.qual %}
-      <div class="p-5 border rounded border-gray-200 hover:border-blue-400">
-        <button id="collapser" onclick="collapsible_runner(this)">
+        <div class="w-full max-w-2xl grid grid-cols-1 lg:grid-cols-2 gap-2 my-4 px-2 lg:mx-0">
+            {% if qualifications.qual %} {% for item in qualifications.qual %}
+            <div class="p-5 border rounded border-gray-200 hover:border-blue-400">
+                <button id="collapser collapser-{{item.short}}" onclick="collapsible_runner(this)">
           <center>
             <h3>{{item.skill}} ↓</h3>
             <p>{{item.desc}}</p>
           </center>
         </button>
-        <div class="collapsercontent gap-1 my-2 px-1 mx-0" id="collapsercontent">
-          <center>
-            <div class="my-1" id="spacer">⠀</div>
-            <hr>
-            <div class="my-1" id="spacer">⠀</div>
+                <div class="collapsercontent gap-1 my-2 px-1 mx-0" id="collapsercontent">
+                    <center>
+                        <div class="my-1" id="spacer">⠀</div>
+                        <hr>
+                        <div class="my-1" id="spacer">⠀</div>
 
-            <h3>{{item.ucdesc}}</h3>
-            <ul>
-              {% for uc in item.uc %}
-              <li>{{uc}}</li>
-              {% endfor %}
-            </ul>
-          </center>
+                        <h3>{{item.ucdesc}}</h3>
+                        <ul>
+                            {% for uc in item.uc %}
+                            <li>{{uc}}</li>
+                            {% endfor %}
+                        </ul>
+                    </center>
+                </div>
+            </div>
+            {% endfor %} {% endif %}
         </div>
-      </div>
-      {% endfor %}
-
-      {% endif %}
     </div>
-  </div>
-  <!-- #endregion END -->
+    <!-- #endregion END -->
 
-  <center>
-    <div class="my-1" id="spacer">⠀</div>
-  </center>
-
-  <!-- #region Quicklinks -->
-  <div id="quicklinks" class="gap-2 px-2">
     <center>
-      <h3>Quick Links</h3>
-    </center>
-    <div class="w-full max-w-2xl grid grid-cols-1 lg:grid-cols-2 gap-2 my-4 px-2 lg:mx-0">
-
-      {% if quicklinks.links %}
-
-      {% for item in quicklinks.links %}
-      <a href="{{item.url}}" target="_blank" class="p-5 border rounded border-gray-200 hover:border-purple-400">
-        <h3>{{item.title}} →</h3>
-        <p>{{item.desc}}</p>
-      </a>
-      {% endfor %}
-
-      {% endif %}
-
-    </div>
-  </div>
-  <!-- #endregion END -->
-
-  <center>
-    <div class="my-1" id="spacer">⠀</div>
-  </center>
-
-  <div id="testing-shit" class="testing">
-    <center>
-      <h3>Testing</h3>
+        <div class="my-1" id="spacer">⠀</div>
     </center>
 
-    <button onclick="requestTooltip(this.nextElementSibling, 'top', 'Tooltip Text')">
+    <!-- #region Quicklinks -->
+    <div id="quicklinks" class="gap-2 px-2">
+        <center>
+            <h3>Quick Links</h3>
+        </center>
+        <div class="w-full max-w-2xl grid grid-cols-1 lg:grid-cols-2 gap-2 my-4 px-2 lg:mx-0">
+
+            {% if quicklinks.links %} {% for item in quicklinks.links %}
+            <a href="{{item.url}}" target="_blank" class="p-5 border rounded border-gray-200 hover:border-purple-400">
+                <h3>{{item.title}} →</h3>
+                <p>{{item.desc}}</p>
+            </a>
+            {% endfor %} {% endif %}
+
+        </div>
+    </div>
+    <!-- #endregion END -->
+
+    <center>
+        <div class="my-1" id="spacer">⠀</div>
+    </center>
+
+    <div id="testing-shit" class="testing">
+        <center>
+            <h3>Testing</h3>
+        </center>
+
+        <button onclick="requestTooltip(this.nextElementSibling, 'top', 'Tooltip Text')">
       <h3>open tooltip top (i am doing this sometime later!)</h3>
     </button>
 
-  </div>
+    </div>
 
-  <center>
-    <div class="my-1" id="spacer">⠀</div>
-  </center>
+    <center>
+        <div class="my-1" id="spacer">⠀</div>
+    </center>
 
 </div>
