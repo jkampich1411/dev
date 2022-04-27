@@ -1,6 +1,7 @@
 {
     "scripts": {
         "start": "npm-run-all --parallel css eleventy",
+        "debugStart": "npm-run-all --parallel css debug",
         "eleventy": "eleventy --serve",
         "debug": "set DEBUG=* & eleventy",
         "css": "postcss src/static/css/tailwind.css --o _site/static/css/style.css --watch",
