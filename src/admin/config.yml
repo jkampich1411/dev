@@ -1,0 +1,33 @@
+backend:
+  name: github
+  repo: jkampich1411/dev
+  branch: dev
+  baseurl: https://jkdev.run
+  auth_endpoint: /api/netlifycms/auth
+
+media_library:
+  name: uploadcare
+  config:
+    publicKey: f2c718506700c9c49859
+
+publish_mode: editorial_workflow
+
+media_folder: src/static/img
+public_folder: ../static
+
+site_url: https://jkdev.run
+logo_url: https://jkdev.run/static/img/logo.png
+
+collections:
+  - name: 'blog'
+    label: 'Blogposts'
+    folder: 'src/posts'
+    create: true
+    slug: '{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}_{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
