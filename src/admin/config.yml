@@ -1,7 +1,6 @@
 backend:
   name: github
   repo: jkampich1411/dev
-  branch: dev
   baseurl: https://jkdev.run
   auth_endpoint: /api/netlifycms/auth
 
