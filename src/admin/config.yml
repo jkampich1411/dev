@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: jkampich1411/dev
-  baseurl: https://jkdev.run
+  base_url: https://jkdev.run
   auth_endpoint: /api/netlifycms/auth
 
 media_library:
