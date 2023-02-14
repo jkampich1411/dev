@@ -1,11 +1,5 @@
 ---
 links:
-  - title: YouTube
-    url: "https://thejakobcraft.xyz/?redirect=youtube"
-    desc: My YouTube Channel
-  - title: Twitch
-    url: "https://thejakobcraft.xyz/?redirect=twitch"
-    desc: My Twitch Channel
   - title: GitHub
     url: "https://github.com/jkampich1411"
     desc: My GitHub Page
